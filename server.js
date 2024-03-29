@@ -14,7 +14,8 @@ function start(route, handle) {
         route(handle, pathname, response, request);
     }
 
-    http.createServer(onRequest).listen(8080);
+    const port = process.env.PORT || 8080;
+    http.createServer(onRequest).listen(port);
 }
 
 exports.start = start;
